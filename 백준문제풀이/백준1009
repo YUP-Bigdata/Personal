@@ -1,0 +1,11 @@
+T = int(input())
+
+for i in range(T):
+    a,b = map(int, input().split())
+    result = pow(a,b,10)
+    if not result:
+        print(result+10)
+    else:
+        print(result)
+    
+#pow 함수는 pow(a,b) = a**B, pow(a,b,10)이면 a**b에 10을 나눈 나머지를 나타낸다.

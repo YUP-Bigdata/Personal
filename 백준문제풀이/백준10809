@@ -1,0 +1,7 @@
+S = input()
+alphabet = list(range(97,123))  
+
+for x in alphabet :
+    print(S.find(chr(x))) 
+    
+#아스키코드를 활용. 아스키코드로 a는 97

@@ -1,0 +1,14 @@
+n = 1000 - int(input())
+
+currency = [500, 100, 50, 10, 5, 1] 
+count = 0 
+i = 0 
+
+while n != 0:
+  count += n//currency[i] 
+  n %= currency[i] 
+  i += 1 
+
+print(count)
+
+#currency같은 화폐의 가치같은 것들은 바깥에서 정해주고 while이나 for를 돌려야함.

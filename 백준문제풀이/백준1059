@@ -1,0 +1,39 @@
+def solution():
+    L = int(input())
+    arr = list(map(int, input().split()))
+    n = int(input())
+    arr.sort()
+    prev = 0
+
+    for num in arr:
+        if num == n:
+            return 0
+
+        if num > n:
+            min_val = prev +1
+            max_val = num - 1
+            break
+
+        prev = num
+
+    return (n - min_val) * (max_val- n +1) + (max_val - n)
+
+
+print(solution())
+
+
+
+
+#실패했던 코드.
+#L = int(input())
+#S = list(map(int, input().split()))
+#n = int(input())
+#S1 = S.sort
+#if n > S1[0]:
+#    for i in range(n+1,S1[1]):
+#        print([n,i])
+#elif n in S1:
+#    print('0')
+#else:
+#    for i in range(n-1,S1[1]):
+#        print([n,i])

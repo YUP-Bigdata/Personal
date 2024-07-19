@@ -1,0 +1,29 @@
+N, M = map(int,input().split())
+
+chess = [input()for _ in range(N)]
+#리스트에 받아주고, for문을 이용해서 n줄로 받아낸다.
+
+w = 'W','B'
+b = 'B','W'
+
+def check(i,j):
+    result_w = 0
+    result_b = 0
+    for di in range(8):
+        for dj in range(8):
+          ni,nj = i+di, j+dj
+          if chess[ni][nj] != w[(di+dj) % 2]:
+              result_w += 1
+          if chess[ni][nj] != b[(di+dj) % 2]:
+              result_b += 1
+    return min(result_w, result_b)
+
+#BWBW이거나 WBWB이어야한다. 'chess'의 [ni][nj]가 w[(di+dj) % 2], b[(di+dj) % 2]가 아니라면 result += 1
+
+result = 10000000
+
+for i in range(N-7):
+    for j in range(M-7):
+        result = min(result, check(i,j))
+
+print(result)

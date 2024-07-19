@@ -1,0 +1,25 @@
+import sys
+input = sys.stdin.readline
+
+def func(x, b):
+    if x !=0 and x % b == 0: return 1+func(x//b,b)
+    else: return 0
+    
+#만약 x가 b로 나누어진다면 맨 뒤에 0이 존재하게 된다.
+#x가 12라면 맨 뒤에 0이 존재하므로 1 + func(6, 2)를 return하고,
+#x가 6이라면 맨 뒤에 0이 존재하므로 1 + func(3,2)를 return하고,
+#x가 3이라면 맨 뒤에 0이 존재하지 않으므로 return 0 을 한다. 그러면 x가 6일 때 return 1 + 0 이고,
+#x가 12일 때 1 + (1+0) 이므로 2를 return하게 된다.
+
+c = [0] * 1001
+for x in range(2, 1001):
+    c[x] = sum(func(x, b) for b in range(2, x+1))
+
+for _ in range(int(input())):
+    x = int(input())
+    print(c[x])
+    
+# x를 x 진법으로 변환하면 10이 된다.  
+# 그리고 x+1 진법으로 변환하게 되면 n(x+1진법)이 되므로 맨 뒤에 0이 존재할 수 없다. 
+#따라서 x를 b진법으로 변환하는 과정에서 b의 최댓값을 x로 한정한다. 
+#그렇게 각 진법에 대해서 나오는 0의 값을 총 합하여 c[x]에 넣는다.

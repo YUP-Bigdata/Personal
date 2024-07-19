@@ -1,0 +1,10 @@
+import math
+
+T = int(input())
+
+for _ in range(T):
+    n, m = map(int, input().split())
+    bridge = math.factorial(m) // (math.factorial(n) * math.factorial(m - n))
+    print(bridge)
+    
+#*실버 입성* 그러나 순열 조합문제는 어려웠다. https://coding-factory.tistory.com/606 참고.

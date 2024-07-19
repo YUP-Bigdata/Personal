@@ -1,0 +1,4 @@
+x,y,w,h = map(int, input().split())
+print(min(x,y,w-x,h-y))
+
+#직사각형의 경계선까지만 가면되기 때문에 x,y,w-x,h-y중 가장 작은 숫자면 경계선까지 도달하는 것이 가능하다.

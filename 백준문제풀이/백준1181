@@ -1,0 +1,17 @@
+import sys
+
+n = int(sys.stdin.readline())
+lst = []
+
+for i in range(n):
+    lst.append(sys.stdin.readline().strip())
+set_lst = set(lst)
+lst = list(set_lst)
+lst.sort()
+lst.sort(key = len)
+
+for i in lst:
+    print(i)
+    
+#input()은 느리니 sys.stdin.readline()을 자주 써주자. int가 아닌 str의 경우 맨뒤에 \n이 따라오니 끝에 .strip()을 넣어주면 좋다.
+#sort() 혹은 sorted(). list에는 sort를 쓰는게 맞다. reverse = True를 해줄시 내림차순이 가능

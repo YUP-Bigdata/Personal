@@ -1,0 +1,8 @@
+N,X = map(int, input().split())
+A = list(map(int, input().split()))
+
+for i in range(N):
+    if A[i] < X:
+        print(A[i], end=' ')
+        
+#문제에서는 N에 대해서 언급했으므로 식에 꼭 N이 들어가야함. 따라서 index를 활용해서 하면 좋음.
